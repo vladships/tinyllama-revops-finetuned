@@ -9,19 +9,21 @@ tags:
 language:
 - en
 ---
-# TinyLlama RevOps Fine-Tuned Adapter
+# RevOpsLM
 
-A LoRA fine-tuned adapter for TinyLlama-1.1B-Chat trained on Salesforce Agentforce, NetSuite AI, and SaaS Revenue Recognition (ASC 606) concepts.
+🤗 **[View Model on Hugging Face](https://huggingface.co/Builder123/tinyllama-revops-finetuned)**
+
+A language model trained on Salesforce Agentforce, NetSuite AI, and SaaS Revenue Recognition (ASC 606) concepts using a LoRA fine-tuned adapter for TinyLlama-1.1B-Chat.
 
 ## Model Description
 
-This is a **proof-of-concept project** demonstrating LoRA fine-tuning techniques applied to a small language model. The adapter was trained on 50 curated examples covering:
+This is a **proof-of-concept project** demonstrating LoRA fine-tuning techniques applied to a language model. The adapter was trained on 50 curated examples covering:
 
 - **Salesforce Agentforce** (20 examples): Agent types, RAG, topics, guardrails, triggers, and analytics
 - **NetSuite AI Features** (15 examples): Text Enhancer, Analytics Warehouse, Smart Alerts, and automation capabilities
 - **SaaS Revenue Recognition** (15 examples): ASC 606 compliance, performance obligations, deferred revenue, and contract accounting
 
-**Important**: This is a learning exercise with limited training data. The model demonstrates fine-tuning methodology but would require substantially more training examples (500+) for production use.
+**Important**: This is a learning exercise with limited training data. The model demonstrates fine-tuning methodology and is not meant for production use.
 
 ## Training Details
 
@@ -35,7 +37,7 @@ This is a **proof-of-concept project** demonstrating LoRA fine-tuning techniques
 
 ## How to Use
 
-To use this adapter, you'll need to load both the base model and this LoRA adapter:
+To use this model, you'll need to load both the base model and this LoRA adapter:
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
@@ -53,8 +55,8 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 ## Limitations
 
-- Trained on only 50 examples - responses may be inaccurate or incomplete
-- Not suitable for production use without additional training
+- Trained on limited data - responses may be inaccurate or incomplete
+- Not suitable for production use without additional training data
 - May hallucinate or provide outdated information
 - Should be verified against official documentation
 
@@ -67,7 +69,7 @@ This model is intended for:
 
 ## License
 
-This adapter follows the license of the base TinyLlama model (Apache 2.0).
+This model follows the license of the base TinyLlama model (Apache 2.0).
 
 ## Author
 
@@ -75,4 +77,3 @@ Created by Vladimir Parfenov.
 
 ---
 
-*Note: This is a demonstration project. For accurate information on Salesforce, NetSuite, or revenue recognition, please consult official documentation.*
